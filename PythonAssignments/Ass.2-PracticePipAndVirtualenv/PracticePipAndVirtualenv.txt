@@ -1,0 +1,18 @@
+
+pip list: it shows all the installed packes in the active virtual invironment and its related to the python2.
+
+deactivate: it will deactivate the active virtual invironment.
+
+pip3 list: its used when the virtual environment is disabled to show all the installed packages on the real machine not the virtual one. and its related to python3 or later.
+
+call myEnvironments/py3Env/Scripts/activate: its used to activate the virtual environment which name is py3Env.
+
+pip install Django==2.2.4: its used to  install the Django package on the virtual machine.
+
+pip freeze: it shows the installed packages in requirements format.
+
+pip freeze > requirements.txt:it makese a TXT file with all the installed packages in the directory you are in.
+
+pip uninstall Django: it removes the Django package from the virtual environment.
+
+pip show Django:it shows information about the Django package if its installed in your environment.
