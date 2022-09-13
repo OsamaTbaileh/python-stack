@@ -28,13 +28,19 @@ print(a())                       #5
 def a():
     print(5)
 x = a()
-print(x)                         #5
+print(x)                         #5, undefined
 
 
 #6
 def a(b,c):
     print(b+c)
 print(a(1,2) + a(2,3))           #3, 5
+
+#another solution for 6 becasue it was making an error (print none+none) becasue there was no return
+def a(b,c):
+    return(b+c)
+x=a(1,2) + a(2,3)
+print(x)
 
 
 #7
