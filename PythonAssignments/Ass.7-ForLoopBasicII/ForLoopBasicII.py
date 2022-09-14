@@ -59,7 +59,7 @@ def Minimun (list):
         return False
     else:
         Minimum = list[0]
-        for i in range (1,len(list)-1):
+        for i in range (1,len(list)):
             if list[i]<Minimum:
                 Minimum=list[i]
         return Minimum
