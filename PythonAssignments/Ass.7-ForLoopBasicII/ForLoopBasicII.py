@@ -112,8 +112,8 @@ print (result)
 def ReverseList (list):
     for i in range (int(len(list)/2)):
         New =list[i]
-        list[i]=list[len(list)-1]
-        list[len(list)-1] = New
+        list[i]=list[len(list)-i-1]
+        list[len(list)-i-1] = New
     return list
 result= ReverseList ([37,2,1,-9])
 print (result) 
