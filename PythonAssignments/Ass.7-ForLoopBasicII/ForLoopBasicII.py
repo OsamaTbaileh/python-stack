@@ -74,7 +74,7 @@ def Maximum (list):
         return False
     else:
         Maximum = list[0]
-        for i in range (1,len(list)-1):
+        for i in range (1,len(list)):
             if list[i]>Maximum:
                 Maximum=list[i]
         return Maximum
