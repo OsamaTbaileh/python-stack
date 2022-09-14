@@ -1,0 +1,11 @@
+
+import random
+def randInt(min=0, max=70):
+    if min>max:
+        return False
+    else:
+        num = random.random()*(max-min) + min
+        num = round (num)
+        return num
+result = randInt(min=80)
+print (result)
