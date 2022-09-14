@@ -6,6 +6,6 @@ def randInt(min=0, max=100):
     else:
         num = random.random()*(max-min) + min
         num = round (num)
-        return number
+        return num
 result = randInt(min=50, max=70)
 print (result)
