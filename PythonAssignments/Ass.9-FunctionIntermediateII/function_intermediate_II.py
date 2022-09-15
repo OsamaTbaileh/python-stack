@@ -40,6 +40,12 @@ def iterateDictionary(some_list):
             print (key, "-", val)
 result = iterateDictionary(students)
 
+# # another solution:
+# def iterateDictionary(some_list):
+#         for x in range (len(some_list)):
+#             print ("first_name -", students[x]['first_name']+',', "last_name -", students[x]['last_name'] )
+# result = iterateDictionary(students)
+
 
 # 3- Get Values From a List of Dictionaries
 # solution:
@@ -66,7 +72,7 @@ def printInfo(some_dict):
             print (some_dict[k][x])
 result = printInfo (dojo)
 
-# # amother silution that didnt work:
+# # amother solution that didnt work:
 # def printInfo(some_dict):
 #     for key, val in some_dict.items():
 #         print len(val)
