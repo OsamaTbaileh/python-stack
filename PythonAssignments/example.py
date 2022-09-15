@@ -71,23 +71,49 @@
 #     print (jiji)
 #     jiji+=1
 
-for x in "String":
-    if x=="i":
-        break
-    print("gg")
+# for x in "String":
+#     if x=="i":
+#         break
+#     print("gg")
 
 
-    function buildPalindrome(st) {
-    var i = 0;
-    var aux;
-    while(st != st.split('').reverse().join('')){
-        aux = st.split('')
-        aux.splice(st.length-i, 0 ,st[i])
-        st = aux.join('');
-        i++;
-    }
-    return st;
-}
-var x =buildPalindrome("osama");
+#     function buildPalindrome(st) {
+#     var i = 0;
+#     var aux;
+#     while(st != st.split('').reverse().join('')){
+#         aux = st.split('')
+#         aux.splice(st.length-i, 0 ,st[i])
+#         st = aux.join('');
+#         i++;
+#     }
+#     return st;
+# }
+# var x =buildPalindrome("osama");
 
+osama = { "first":"jojo", "last":"hoho", "age":55}
+for x in osama:
+    print (x)  or print (osama[x])
+
+for key in osama.keys()
+    print (ket)
+
+for val in osama.values()
+    print (val)
+
+for x, y in osama.items():
+    print (key,"=",val)
+
+def ultimate_analysis(array):
+    myDictonary = {'sumTotal': 0, 'average': 0, 'minimum': array[0], 'maximun': array[0], 'length': len(array)}
+    for val in array:
+        if myDictonary['minimum']<val:
+            myDictonary['minimum'] = val
+        if myDictonary['maximun']>val:
+            myDictonary['maximun'] = val
+        myDictonary['sumTotal']+= val
+        myDictonary['average']=myDictonary['sumTotal']/len(array)
+    return myDictonary
+print(ultimate_analysis([1,2,1,2,4,0]))
+print(ultimate_analysis([1,0]))
+print(ultimate_analysis([15,4,1,0]))
 
