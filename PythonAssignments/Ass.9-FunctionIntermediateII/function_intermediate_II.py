@@ -72,10 +72,10 @@ def printInfo(some_dict):
             print (some_dict[k][x])
 result = printInfo (dojo)
 
-# # amother solution that didnt work:
+# # another solution
 # def printInfo(some_dict):
 #     for key, val in some_dict.items():
-#         print len(val)
-#         print (key)
-#         print (val)        
+#         print (len(val), key)
+#         for x in range (len(val)):
+#             print (val[x])        
 # printInfo(dojo)
