@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playground</title>
+</head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        .main {
+            margin: 30px 150px;
+        }
+
+        .main2 {
+            margin: 30px 150px;
+            outline: 1px solid red;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .box {
+            background-color: #9fc5f8;
+            width: 250px;
+            height: 250px;
+            border: 4px solid black;
+            margin: 20px;
+            display: inline-block;
+        }
+
+        .box2 {
+            background-color: #9fc5f8;
+            width: 250px;
+            height: 250px;
+            border: 4px solid black;
+            margin: 20px;
+
+        h1 {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+    </style>
+<body>
+    <!-- simple solution: -->
+    <div class="main">
+    {% for i in range (0,times): %}
+        <div style="background-color:{{wanted_color}};" class="box"></div>
+    {% endfor %}
+</body>
+</html>
+
+
+
+<!-- another solution to make the boxes which is less than 3 centered in the screen:
+just copy paste all between body tags: -->
+
+<!-- <h1>Welcome!</h1>
+{% if times <= 3 : %}
+    <div class="main2">
+    {% for i in range (0,times): %}
+        <div style="background-color:{{wanted_color}};" class="box2"></div>
+    {% endfor %}
+{% elif times > 3 : %}
+    <div class="main">
+    {% for i in range (0,times): %}
+        <div style="background-color:{{wanted_color}};" class="box"></div>
+    {% endfor %}
+{% endif %}
+</div> -->
