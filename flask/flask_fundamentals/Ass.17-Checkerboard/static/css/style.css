@@ -1,0 +1,45 @@
+body {
+  /* background-color: rgb(239, 217, 202); */
+}
+
+.container, .container-fluid {
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+}
+
+[class*="col"]{
+  border: silver solid 5px;
+  background-color: rgb(100, 0, 228);
+  color: rgb(255, 255, 255);
+  height: 90px;
+  width: 90px;
+}
+
+[class*="col-1 black"] {
+  background-color: black;
+}
+
+[class*="col-1 red"] {
+  background-color: red;
+}
+
+.row.top [class*="col-1"] {
+  border-top: silver solid 10px;
+}
+
+.row.bottom [class*="col-1"] {
+  border-bottom: silver solid 10px;
+}
+
+.side {
+  background-color: white;
+  border: none;
+}
+
+.side.left {
+  border-right: silver solid 5px;
+}
+
+.side.right {
+  border-left: silver solid 5px;
+}

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/style.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
+    <title>Combining Classes</title>
+  </head>
+  
+  <body>
+    <div class="container">
+        {% for r in range (rows): %}
+            <div class="row">
+                {% for c in range (columns): %}
+                    {% if c%2==0 and r%2==0 or c%2!=0 and r%2!=0: %}
+                        <div class="col-1 {{color_1}}" style="background-color: {{color_1}};"></div>  
+                    {% else: %}
+                        <div class="col-1 {{color_2}}" style="background-color: {{color_2}};"></div>
+                    {% endif %}
+                {% endfor %}
+            </div>    
+        {% endfor %}
+    </div> 
+</body>
+</html>
