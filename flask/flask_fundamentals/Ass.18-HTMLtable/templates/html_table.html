@@ -21,11 +21,11 @@
         </tr>
     </thead>
     <tbody>
-        {% for r in range (users_names|length): %}
+        {% for user in users_names: %}
             <tr>
-                <td>{{users_names[r]['first_name']}}</td>
-                <td>{{users_names[r]['last_name']}}</td>
-                <td>{{users_names[r]['first_name']}} {{users_names[r]['last_name']}}</td>
+                <td>{{user['first_name']}}</td>
+                <td>{{user['last_name']}}</td>
+                <td>{{user['first_name']}} {{user['last_name']}}</td>
             </tr>
         {% endfor %}
     </tbody>
