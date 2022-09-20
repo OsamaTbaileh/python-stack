@@ -90,30 +90,50 @@
 # }
 # var x =buildPalindrome("osama");
 
-osama = { "first":"jojo", "last":"hoho", "age":55}
-for x in osama:
-    print (x)  or print (osama[x])
+# osama = { "first":"jojo", "last":"hoho", "age":55}
+# for x in osama:
+#     print (x)  or print (osama[x])
 
-for key in osama.keys()
-    print (ket)
+# for key in osama.keys()
+#     print (ket)
 
-for val in osama.values()
-    print (val)
+# for val in osama.values()
+#     print (val)
 
-for x, y in osama.items():
-    print (key,"=",val)
+# for x, y in osama.items():
+#     print (key,"=",val)
 
-def ultimate_analysis(array):
-    myDictonary = {'sumTotal': 0, 'average': 0, 'minimum': array[0], 'maximun': array[0], 'length': len(array)}
-    for val in array:
-        if myDictonary['minimum']<val:
-            myDictonary['minimum'] = val
-        if myDictonary['maximun']>val:
-            myDictonary['maximun'] = val
-        myDictonary['sumTotal']+= val
-        myDictonary['average']=myDictonary['sumTotal']/len(array)
-    return myDictonary
-print(ultimate_analysis([1,2,1,2,4,0]))
-print(ultimate_analysis([1,0]))
-print(ultimate_analysis([15,4,1,0]))
+# def ultimate_analysis(array):
+#     myDictonary = {'sumTotal': 0, 'average': 0, 'minimum': array[0], 'maximun': array[0], 'length': len(array)}
+#     for val in array:
+#         if myDictonary['minimum']<val:
+#             myDictonary['minimum'] = val
+#         if myDictonary['maximun']>val:
+#             myDictonary['maximun'] = val
+#         myDictonary['sumTotal']+= val
+#         myDictonary['average']=myDictonary['sumTotal']/len(array)
+#     return myDictonary
+# print(ultimate_analysis([1,2,1,2,4,0]))
+# print(ultimate_analysis([1,0]))
+# print(ultimate_analysis([15,4,1,0]))
 
+# dojo = {
+#    'locations': ['San Jose', 'Seattle', 'Dallas', 'Chicago', 'Tulsa', 'DC', 'Burbank'],
+#    'instructors': ['Michael', 'Amy', 'Eduardo', 'Josh', 'Graham', 'Patrick', 'Minh', 'Devon']
+# }
+
+# def printInfo(some_dict):
+#     for key, val in some_dict.items():
+#         print (len(val))
+#         print (key)
+#         print (val)        
+# printInfo(dojo)
+
+users = [
+    {'first_name' : 'Michael', 'last_name' : 'Choi'},
+    {'first_name' : 'John', 'last_name' : 'Supsupin'},
+    {'first_name' : 'Mark', 'last_name' : 'Guillen'},
+    {'first_name' : 'KB', 'last_name' : 'Tonel'}
+]   
+x = users
+print (x[0]['first_name'])
