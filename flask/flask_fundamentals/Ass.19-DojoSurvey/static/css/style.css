@@ -1,0 +1,46 @@
+.main {
+    margin: 90px auto;
+    padding: 20px;
+    border: #0d6efd solid 3px;
+    width: 900px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+label, div p {
+    font-size: 23px;
+    color: rgb(42, 85, 139);
+    font-weight: bolder;
+}
+
+.result_header {
+    color: rgb(42, 85, 139);
+    text-decoration: underline;
+}
+
+.result  {
+    display: flex;
+    align-items: center;
+    width: 900px;
+}
+
+.result h2 {
+    font-size: 25px;
+    color: rgb(42, 85, 139);
+    width: 300px;
+    font-weight: 900;
+    word-wrap: break-word;
+}
+
+div p {
+    width: 600px;
+    word-wrap: break-word;
+}
+
+.form-check .form-check-label {
+    color: #4b93ff;
+    font-size: 17px;
+}
+
+.btn {
+    margin-top: 10px;
+}
