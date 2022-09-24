@@ -23,4 +23,3 @@ def make_add_two(request):
     return redirect('/')	
 
 
-
