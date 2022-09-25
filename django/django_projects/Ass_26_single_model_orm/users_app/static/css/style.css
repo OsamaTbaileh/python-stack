@@ -1,0 +1,61 @@
+h2{
+    text-align: center;
+    text-decoration: underline;
+    margin: 15px 0px;
+    font-size: 42px;
+}
+
+.table, form {
+    width: 70%;
+    margin: 20px auto;
+}
+
+.table {
+    border: 2px solid black;
+}
+
+th{
+    color: brown;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.form-control{
+    width: 400px;
+    border: 2px solid black;
+}
+
+.mainbody{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: top;
+}
+
+.form-label {
+    display: block;
+    text-align: center;
+    margin: 20px 0px 7px 0px;
+    font-size: 20px;
+    font-weight: bolder;
+    color: brown;
+}
+
+.left, .right {
+    margin: 0px 20px;
+}
+
+.button{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-primary{
+    margin-top: 30px;
+    width:200px;
+    height: 45px;
+    font-size: 23px;
+    font-weight: bolder;
+    box-shadow: 5px 5px black;
+}  
