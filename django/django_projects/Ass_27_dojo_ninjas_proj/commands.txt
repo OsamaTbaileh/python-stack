@@ -1,0 +1,50 @@
+1)>>>>  python manage.py shell
+
+2)>>>>  from dojo_ninjas_app.models import *
+
+3)>>>>  Dojo.objects.create(name="Basha", city="Nowhere", state="zamzam")
+	Dojo.objects.create(name="Hoho", city="everywhere", state="RumRam")
+	Dojo.objects.create(name="Fufu", city="Here and there", state="Yes State")
+
+4)>>>>  c = Dojo.objects.get(id=1)
+	c.delete()
+	c = Dojo.objects.get(id=2)
+	c.delete()
+	c = Dojo.objects.get(id=3)
+	c.delete()
+
+5)>>>>  Dojo.objects.create(name="This again", city="Far Away", state="even further")
+	Dojo.objects.create(name="osama Yalla", city="Nablus", state="the north")
+	Dojo.objects.create(name="Majd Yalla", city="Tulkarem", state="the northest north")
+	
+6)>>>>  Dojo1 = Dojo.objects.get(id=4)
+	my_ninja1 = Ninja.objects.create(first_name="Najwan", last_name="Radwan", dojo=Dojo1)
+	my_ninja2 = Ninja.objects.create(first_name="Same7", last_name="Sam7an", dojo=Dojo1)
+	my_ninja3 = Ninja.objects.create(first_name="Qazem", last_name="khalaf", dojo=Dojo1)
+
+7)>>>>  Dojo2 = Dojo.objects.get(id=6) 6->5
+	my_ninja4 = Ninja.objects.create(first_name="Najwa", last_name="Radwa", dojo=Dojo2)
+	my_ninja5 = Ninja.objects.create(first_name="Sama", last_name="A7a", dojo=Dojo2)
+	my_ninja6 = Ninja.objects.create(first_name="Jameel", last_name="Marzouq", dojo=Dojo2)
+
+8)>>>>  Dojo3 = Dojo.objects.get(id=5)  5--6
+	my_ninja7 = Ninja.objects.create(first_name="Naji", last_name="Radi", dojo=Dojo3)
+	my_ninja8 = Ninja.objects.create(first_name="Thafer", last_name="Simon", dojo=Dojo3)
+	my_ninja9 = Ninja.objects.create(first_name="Kameel", last_name="Masoaud", dojo=Dojo3)
+
+9)>>>>  Ninja.objects.filter(dojo_id=4) or  Ninja.objects.filter(dojo=Dojo1)
+
+10)>>>> Ninja.objects.filter(dojo_id=6) or  Ninja.objects.filter(dojo=Dojo3)
+
+11)>>>> last_ninja = Ninja.objects.last()
+	last_ninja.dojo
+
+12)>>>> add "desc = models.TextField()" to models.py
+	exit shell
+	python manage.py makemigrations
+	select 1>> enter
+	"old dojo" >> enter
+	python manage.py migrate
+	from dojo_ninjas_app.models import *
+
+13)>>>>	Dojo.objects.create(name="Mouse", city="wonderland", state="lost", desc="dslkfndskj.bnfkjds")
