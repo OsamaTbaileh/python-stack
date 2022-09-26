@@ -7,6 +7,7 @@ def root(request):
         "all_the_users": User.objects.all()
     }
     return render(request, "index.html", context)
+    
 
 def new_user_method(request):
     new_user = User.objects.create(
