@@ -37,8 +37,8 @@
             <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="state">
         </div>
 
-        <input type="submit" class="btn-check" id="btn-check"  name="button2">
-        <label class="btn btn-primary" for="btn-check">Add</label>
+        <input type="submit" class="btn-check" id="btn-check2"  name="button2">
+        <label class="btn btn-primary" for="btn-chec2k">Add</label>
     </form>
 
 
@@ -51,7 +51,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
             </div>
-            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="First_name">
+            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="first_name">
         </div>
 
         <div class="input-group mb-3">
@@ -68,16 +68,15 @@
             <select class="custom-select" id="inputGroupSelect01" name="dojo">
                 <option selected>select a dojo</option>
                 {% for dojo in all_the_Dojos %}
-                    <option value="1"><dojo class="name"></dojo>{{dojo.name}}</option>
+                    <option value="{{dojo.name}}"><dojo class="name">{{dojo.name}}</dojo></option>
                 {% endfor %}
             </select>
         </div>
 
-        <input type="submit" class="btn-check" id="btn-check"  name="button">
+        <input type="submit" class="btn-check" id="btn-check"  name="button2">
         <label class="btn btn-primary" for="btn-check">Add</label>
     </form>
 
-    <!-- <hr> -->    <!-- <hr> -->    <!-- <hr> -->    <!-- <hr> -->    <!-- <hr> -->    <!-- <hr> -->
 
     <h2>All the Dojos</h2>
     {% for dojo in all_the_Dojos %}
@@ -91,7 +90,5 @@
         </ul>
     {% endfor %}
 
-
-    
 </body>
 </html>

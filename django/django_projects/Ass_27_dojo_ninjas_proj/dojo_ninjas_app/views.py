@@ -7,19 +7,19 @@ def root(request):
         "all_the_Dojos": Dojo.objects.all(),
         "all_the_Ninjas": Ninja.objects.all()
     }
-    print (context)
     return render(request, "index.html", context)
 
 def adding_dojo_method(request):
-    name = request.Post['name']
-    city = request.Post['city']
-    state = request.Post['state']
+    name = request.POST['name']
+    city = request.POST['city']
+    state = request.POST['state']
     Dojo.objects.create(name=name, city=city, state=state, desc="OK")
     return redirect('/')
 
 def adding_ninja_method(request):
-    first_name = request.Post['first_name']
-    last_name = request.Post['last_name']
+    print(request.POST['dojo'])
+    first_name = request.POST['first_name']
+    last_name = request.POST['last_name']
     dojo = Dojo.objects.get(name= request.POST['dojo'])
     Ninja.objects.create(first_name=first_name, last_name=last_name, dojo=dojo)
     return redirect('/')
