@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read (One)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+    rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" 
+    crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <a href="/go_back_to_shows">Go Back</a>
+    <br>
+    <br>
+    <br>
+
+    <h2>TV Show {{the_show_template.id}}</h2>
+    <p>Title: {{the_show_template.title}}</p>
+    <p>Network: {{the_show_template.network}}</p>
+    <p>Release Date: {{the_show_template.release_date}}</p>
+    <p>Description: {{the_show_template.description}}</p>
+    <br>
+    <br>
+    <br>
+    <p>Last Updated: {{the_show_template.updated_at}}</p>
+    <a href="/shows/{{the_show_template.id}}/edit">Edit</a>|<a href="/shows/{{the_show_template.id}}/destroy">Delete</a>
+    
+</body>
+</html>
