@@ -19,6 +19,14 @@
     <br>
 
     <h2>Add a New Show</h2>
+    {% if messages %}
+        <ul class="messages">    
+        {% for message in messages %}    
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+        {% endfor %}
+        </ul>
+    {% endif %}
+
     <form action="create" method="post">
         {% csrf_token %}
         <div class="input-group mb-3">

@@ -19,6 +19,14 @@
     <br>
 
     <h2>Edit Show {{the_show_template.id}}</h2>
+    {% if messages %}
+        <ul class="messages">    
+        {% for message in messages %}    
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+        {% endfor %}
+        </ul>
+    {% endif %}
+    
     <form action="/shows/{{the_show_template.id}}/update" method="post">
         {% csrf_token %}
         <div class="input-group mb-3">

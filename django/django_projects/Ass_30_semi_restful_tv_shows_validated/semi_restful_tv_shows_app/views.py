@@ -1,6 +1,8 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.http import JsonResponse
 from .models import Show
+from django.contrib import messages
+
 
 
 def root(request):
@@ -18,11 +20,18 @@ def add_new_show(request):
     return render(request, "add_new_show.html")
 
 
-def create_new_show(request):   
+def create_new_show(request):
+    errors = Show.objects.basic_validator(request.POST)
+    if len(errors) > 0:
+        for key, val in errors.items():
+            messages.error(request, val)
+        return redirect('/shows/new')
+
+
     new_show = Show.objects.create(title = request.POST['title'], 
-        network = request.POST['network'], 
-        release_date = request.POST['release_date'], 
-        description = request.POST['description'])
+            network = request.POST['network'], 
+            release_date = request.POST['release_date'], 
+            description = request.POST['description'])
     return redirect ('/shows/'+ str(new_show.id))
 
 
@@ -43,12 +52,19 @@ def go_to_edit_the_show(request, show_id):
 
 
 def update_the_show(request, show_id):
-    the_show = Show.objects.get(id=show_id)
-    the_show.title = request.POST['title']
-    the_show.network = request.POST['network']
-    the_show.release_date = request.POST['release_date']
-    the_show.description = request.POST['description']
-    the_show.save()
+    errors = Show.objects.basic_validator(request.POST)
+    if len(errors) > 0:
+        for key, val in errors.items():
+            messages.error(request, val)
+        return redirect('/shows/' + str(show_id) + '/edit')
+
+    else:
+        the_show = Show.objects.get(id=show_id)
+        the_show.title = request.POST['title']
+        the_show.network = request.POST['network']
+        the_show.release_date = request.POST['release_date']
+        the_show.description = request.POST['description']
+        the_show.save()
     return redirect('/shows/' + str(show_id))
 
 
