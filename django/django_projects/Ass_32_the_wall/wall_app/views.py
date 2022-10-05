@@ -1,14 +1,16 @@
 from django.shortcuts import render, redirect
 from .models import User, Message, Comment
 from django.contrib import messages
+from models import *
 import bcrypt
+
 
 def root(request):
     return render(request, 'login_and_registration.html')
 
 
 def register(request):
-    errors = User.objects.basic_validator(request.POST)
+    errors = User.objects.basic_validator_register(request.POST)
     if len(errors) > 0:
         for key, val in errors.items():
             messages.error(request, val)
@@ -25,6 +27,12 @@ def register(request):
 
 
 def login(request):
+    errors = User.objects.basic_validator_login(request.POST)
+    if len(errors) > 0:
+        for key, val in errors.items():
+            messages.error(request, val)
+        return redirect('/') 
+
     user = User.objects.filter(email = request.POST['email'])
     print(user)
     if user:
@@ -50,8 +58,7 @@ def show_the_wall(request):
 
 
 def post_message(request):
-    user = User.objects.get(id = request.session['userid'])
-    Message.objects.create(message = request.POST['message'], user = user)
+    models.create_post(request)
     return redirect('/wall')
 
 

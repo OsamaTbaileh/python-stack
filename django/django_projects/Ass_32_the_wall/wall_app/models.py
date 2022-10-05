@@ -41,3 +41,7 @@ class Comment(models.Model):
     message = models.ForeignKey(Message, related_name = "comments", on_delete = models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
+
+def create_post(request):
+    user = User.objects.get(id = request.session['userid'])
+    Message.objects.create(message = request.POST['message'], user = user)

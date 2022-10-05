@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favourite Books</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+    rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" 
+    crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <header>
+        <h1>Welcome {{request.session.username}}!</h1>
+        <a href="/logout">Logout</a>
+    </header>
+
+    <main>
+        <div class="left_addbook">
+            <form action="/books/add_fav_book" method="post">
+                {% csrf_token %}
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Title</span>
+                    <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="title">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Description</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
+                </div>
+                <input type="submit" value="Add">
+            </form>
+        </div>
+
+        <div class="right_allbooks">
+            {% for book in all_the_books %}
+                <a href="/books/{{book.id}}">{{book.title}}</a>
+                <p>(added by {{book.uploaded_by.first_name}} {{book.uploaded_by.last_name}})</p>
+                {% if book in book_list_liked_by_user %}
+                    <p>this is one of your favourites</p>
+                {% else %}
+                    <p><a href="/books/{{book.id}}/add_to_fav">Add to Favourites</a></p>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+    </main>
+</body>
+</html>
