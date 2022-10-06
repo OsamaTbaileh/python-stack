@@ -14,76 +14,67 @@
 <body>
 
 {% if messages %}
-    <ul class="messages">    
-    {% for message in messages %}    
-        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
-    {% endfor %}
-    </ul>
+    <div class="caution">
+        <h3>Caution:</h3>
+        <ul class="messages">    
+        {% for message in messages %}    
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+        {% endfor %}
+        </ul>
+    </div>
 {% endif %}
 
-<form action="/register" method="post">
-    {% csrf_token %}
-    <h2>Add a New Show</h2>
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">First Name</span>
+<main>
+    <form action="/register" method="post">
+        {% csrf_token %}
+        <h2>Registration</h2>
+        <div class="input-group mb-3">
+            <span class="input-group-text">First Name</span>
+            <input type="text" class="form-control"  name="first_name">
         </div>
-        <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="first_name">
-    </div>
 
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">LastName</span>
+        <div class="input-group mb-3">
+            <span class="input-group-text">LastName</span>
+            <input type="text" class="form-control"  name="last_name">
         </div>
-        <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="last_name">
-    </div>
 
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Email</span>
+            <input type="email" class="form-control"  name="email">
         </div>
-        <input type="email" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="email">
-    </div>
 
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">Password</span>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Password</span>
+            <input type="password" class="form-control"  name="password">
         </div>
-        <input type="password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="password">
-    </div>
 
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">Confirm PW</span>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Confirm PW</span>
+            <input type="password" class="form-control"  name="confirm_password">
         </div>
-        <input type="password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="confirm_password">
-    </div>
 
-    <input type="submit" value="Register">
-</form>
+        <input type="submit" value="Register" class="pressbutton">
+    </form>
 
 
 
-<form action="/login" method="post">
-    {% csrf_token %}
-    <h2>Login</h2>
+    <form action="/login" method="post">
+        {% csrf_token %}
+        <h2>Login</h2>
 
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Email</span>
+            <input type="email" class="form-control"  name="email">
         </div>
-        <input type="email" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="email">
-    </div>
 
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">Password</span>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Password</span>
+            <input type="password" class="form-control"  name="password">
         </div>
-        <input type="password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="password">
-    </div>
 
-    <input type="submit" value="Login">
-</form>
+        <input type="submit" value="Login" class="pressbutton">
+    </form>
+</main>
 
 </body>
 </html>

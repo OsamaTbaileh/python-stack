@@ -1,0 +1,40 @@
+form {
+    width: 500px;
+}
+
+h2 {
+    color: brown;
+    text-align: center;
+}
+
+span {
+    width: 120px;
+    text-align: center;
+    padding: 0px;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    align-items: top;
+    margin: 220px 50px;
+}
+
+.pressbutton {
+    width: 100px;
+    height: 40px;
+    background-color: brown;
+    color: white;
+    border-radius: 10px 10px 10px 10px;
+    margin-left: 200px;
+}
+
+.caution {
+    position: fixed;
+    top:15px;
+    left:15px;
+}
+
+.caution h3 {
+    color: red;
+}
